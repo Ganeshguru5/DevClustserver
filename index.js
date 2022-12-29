@@ -24,7 +24,7 @@ mongoose
  .catch(err => console.log(err));
 
 let Devinfo={
-    "DeveloperName":"Ganeshguru A",
+    "DeveloperName":"Ganeshguru",
     "Applcation Name":"Notes App for developers"
 }
 app.get('/',(req,res)=>{
