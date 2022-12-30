@@ -25,7 +25,7 @@ mongoose
 
 let Devinfo={
     "DeveloperName":"Ganeshguru",
-    "Applcation Name":"Notes App for developers"
+    "Applcation Name":"DevClust"
 }
 app.get('/',(req,res)=>{
     console.log(Devinfo)
