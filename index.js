@@ -116,10 +116,12 @@ app.post('/api/AddNote/',async(req,res)=>{
             notes:req.body.notes.trim(),
         })
         console.log("sucessfully notes added");
+        return res.status(200)
     }
     catch(e)
     {
         console.log("error occured");
+        return res.status(404)
     }
 })
 
