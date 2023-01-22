@@ -7,7 +7,7 @@ const User = require('./models/userSchema');
 const Api =require('./models/apiSchema')
 const Note = require('./models/notesSchema')
 const Code = require('./models/codeSchema')
-
+const Blog = require('./models/blogSchema')
 const { json } = require('express');
 const URL ='mongodb+srv://Ganeshguru:iH%40teyou7@cluster0.zunhkyn.mongodb.net/DevClustDatabse?retryWrites=true&w=majority'
 
@@ -140,6 +140,21 @@ app.post('/api/AddCode/',async(req,res)=>{
     }
 })
 
+app.post('/api/AddBlog/',async(req,res)=>{
+    try{
+        await Blog.create({
+            username:req.body.username,
+            html:req.body.html,
+            css:req.body.css,
+            js:req.body.js,
+            date:req.body.date,
+
+        }) 
+    }
+    catch(e){
+        console.log("error")
+    }
+})
 
 
 ///this routes fetch and display in the client
