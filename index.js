@@ -194,10 +194,10 @@ app.get('/api/ownnotes/:username',async(req,res)=>{
 })
 
 app.get('/api/myblogs/:username',async(req,res)=>{
-     var Blog = await Blog.find({
+     var Blogs = await Blog.find({
         username:req.params.username,
      })
-     res.json(Blog)
+     res.json(Blogs)
 })
 
 app.post("/api/delete/:id",async(req,res)=>{
