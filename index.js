@@ -144,6 +144,7 @@ app.post('/api/AddBlog/',async(req,res)=>{
     try{
         await Blog.create({
             username:req.body.username,
+            title:req.body.title,
             html:req.body.html,
             css:req.body.css,
             js:req.body.js,
