@@ -193,6 +193,13 @@ app.get('/api/ownnotes/:username',async(req,res)=>{
     
 })
 
+app.get('/api/myblogs/:username',async(req,res)=>{
+     var Blog = await Blog.find({
+        username:req.params.username,
+     })
+     res.json(Blog)
+})
+
 app.post("/api/delete/:id",async(req,res)=>{
     try{
     await Note.deleteOne({
