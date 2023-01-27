@@ -222,6 +222,7 @@ app.get('/api/myblogs/:username',async(req,res)=>{
 app.get('/api/MyApp/:id',async(req,res)=>{
     var findMyApp=await Blog.findById(ObjectId(req.params.id))
     res.json(findMyApp)
+    console.log(findMyApp)
 })
 
 
