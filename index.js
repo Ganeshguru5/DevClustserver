@@ -219,6 +219,14 @@ app.get('/api/myblogs/:username',async(req,res)=>{
      res.json(Blogs)
 })
 
+app.get('/api/MyApp/:id',async(req,res)=>{
+    var findMyApp=await Deploy.find({
+        _id:req.params.id,
+    })
+    res.json(findMyApp)
+})
+
+
 app.post("/api/delete/:id",async(req,res)=>{
     try{
     await Note.deleteOne({
