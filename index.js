@@ -29,7 +29,7 @@ let Devinfo={
     "Applcation Name":"DevClust"
 }
 app.get('/',(req,res)=>{
-    
+    console.log("server running sucessfully")
     res.json(Devinfo)
 })
 
