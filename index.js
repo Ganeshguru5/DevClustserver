@@ -220,7 +220,7 @@ app.get('/api/myblogs/:username',async(req,res)=>{
 })
 
 app.get('/api/MyApp/:id',async(req,res)=>{
-    var findMyApp=await Deploy.find({
+    var findMyApp=await Blog.find({
         _id:req.params.id,
     })
     res.json(findMyApp)
