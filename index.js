@@ -8,6 +8,7 @@ const Api =require('./models/apiSchema')
 const Note = require('./models/notesSchema')
 const Code = require('./models/codeSchema')
 const Blog = require('./models/blogSchema')
+const Deploy = require('./models/DeploySchema')
 const { json } = require('express');
 const URL ='mongodb+srv://Ganeshguru:iH%40teyou7@cluster0.zunhkyn.mongodb.net/DevClustDatabse?retryWrites=true&w=majority'
 
@@ -148,9 +149,26 @@ app.post('/api/AddBlog/',async(req,res)=>{
             html:req.body.html,
             css:req.body.css,
             js:req.body.js,
+            status:req.body.status,
             date:req.body.date,
-
         }) 
+    }
+    catch(e){
+        console.log("error")
+    }
+})
+
+app.post('/api/Deploy/',async(req,res)=>{
+    try{
+        await Deploy.create({
+            _id:req.body.id,
+            username:req.body.username,
+            title:req.body.title,
+            html:req.body.html,
+            css:req.body.css,
+            js:req.body.js,
+            date:req.body.date,
+        })
     }
     catch(e){
         console.log("error")

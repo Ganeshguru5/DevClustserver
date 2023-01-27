@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Blog = mongoose.Schema(
+const DeployBlog = mongoose.Schema(
     {
         username: {
             type: String,
@@ -8,10 +8,6 @@ const Blog = mongoose.Schema(
         title:{
             type:String,
             required:true,
-        },
-        status:{
-            type:String,
-            require:true,
         },
         html:{
             type: String,
@@ -30,8 +26,8 @@ const Blog = mongoose.Schema(
             required: true,
         }
     },
-    {collection : 'blog_data'}
+    {collection : 'Deployblog_data'}
 )
 
-const model = mongoose.model('BlogData', Blog);
+const model = mongoose.model('DeployBlogData', DeployBlog);
 module.exports=model;
